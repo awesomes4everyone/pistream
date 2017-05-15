@@ -1,9 +1,0 @@
-#ignore everything
-*
-#whitelist diretories
-!board/raspberrypi/overlay/etc/
-!board/raspberrypi/overlay/etc/*
-!package/Config.in
-!package/rx/
-!package/rx/*
-!configs/pistream_defconfig
