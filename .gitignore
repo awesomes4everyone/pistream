@@ -11,4 +11,6 @@ support
 !package/Config.in
 !package/rx
 !package/rx/*
+!package/ortp
+!package/ortp/*
 !configs/pistream_defconfig
