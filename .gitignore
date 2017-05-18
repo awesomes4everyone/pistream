@@ -6,7 +6,7 @@ output
 support
 !.gitignore
 !board/raspberrypi/overlay/etc
-!board/raspberrypi/overlay/etc/*
+!board/raspberrypi/overlay/etc/**
 !package
 !package/Config.in
 !package/rx

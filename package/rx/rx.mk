@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-RX_VERSION = 16a2c2bbbf2c9fa5ac5cec3458df69d9f82686c7
+RX_VERSION = f7834bd5d56ccfc2f86fe1072e9b80df93275327
 RX_SITE = $(call github,awesomes4everyone,trx,$(RX_VERSION))
 RX_LICENSE = GPLv2.0
 RX_LICENSE_FILES = COPYING
@@ -13,7 +13,7 @@ RX_DEPENDENCIES = alsa-lib opus ortp
 
 
 define RX_BUILD_CMDS
-	$(MAKE) CC=$(TARGET_CC) LD=$(TARGET_LD) -C $(@D) rx
+	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D) rx
 endef
 
 define RX_INSTALL_TARGET_CMDS 
