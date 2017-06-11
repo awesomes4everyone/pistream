@@ -5,6 +5,12 @@ BOARD_NAME="$(basename ${BOARD_DIR})"
 GENIMAGE_CFG="${BOARD_DIR}/genimage-${BOARD_NAME}.cfg"
 GENIMAGE_TMP="${BUILD_DIR}/genimage.tmp"
 
+echo "Adding justboom audio overlays to config.txt"
+cat <<__EOF__>> "${BINARIES_DIR}/rpi-firmware/config.txt"
+dtoverlay=justboom-dac
+dtoverlay=i2s-mmap
+__EOF__
+
 case "${2}" in
 	--add-pi3-miniuart-bt-overlay)
 	if ! grep -qE '^dtoverlay=' "${BINARIES_DIR}/rpi-firmware/config.txt"; then

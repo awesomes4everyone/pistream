@@ -1,0 +1,37 @@
+#! /bin/sh
+
+NAME=hostapd
+DAEMON=/usr/sbin/$NAME
+ARGS="-B /etc/hostapd/hostapd.conf"
+
+DHCPD=dhcpd
+
+# Gracefully exit if the package has been removed.
+test -x $DAEMON || exit 0
+
+case "$1" in
+	start)
+		printf "Starting $NAME: "
+		start-stop-daemon -S -q -x $DAEMON -- $ARGS
+		[ $? = 0 ] && echo "OK" || echo "FAIL"
+		;;
+	stop)
+		printf "Stopping $NAME: "
+		start-stop-daemon -K -q -n $NAME
+		printf "Stopping $DHCPD: "
+		start-stop-daemon -K -q -n $DHCPD
+		[ $? = 0 ] && echo "OK" || echo "FAIL"
+		;;
+	restart|reload)
+		echo "Restarting $NAME: "
+		$0 stop
+		sleep 1
+		$0 start
+		;;
+	*)
+		echo "Usage: $0 {start|stop|restart|reload}" >&2
+		exit 1
+		;;
+esac
+
+exit 0
