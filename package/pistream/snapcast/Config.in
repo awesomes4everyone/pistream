@@ -1,0 +1,5 @@
+config BR2_PACKAGE_SNAPCAST
+	bool "snapcast"
+	select BR2_PACKAGE_FLAC
+	help
+	  Synchronous multi-room audio player

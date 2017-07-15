@@ -1,7 +1,0 @@
-config BR2_PACKAGE_VOLUMIO2
-        bool "Volumio2"
-        help
-
-	Volumio 2 - Audiophile Music Player
-
-	http://volumio.org

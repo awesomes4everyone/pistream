@@ -1,3 +1,6 @@
+menu "Pistream"
+	source "package/pistream/Config.in"
+
 menu "Target packages"
 
 	source "package/busybox/Config.in"
@@ -8,6 +11,7 @@ menu "Audio and video applications"
 	source "package/atest/Config.in"
 	source "package/aumix/Config.in"
 	source "package/bellagio/Config.in"
+	source "package/djmount/Config.in"
 	source "package/dvblast/Config.in"
 	source "package/dvdauthor/Config.in"
 	source "package/dvdrw-tools/Config.in"
@@ -44,7 +48,6 @@ menu "Audio and video applications"
 	source "package/squeezelite/Config.in"
 	source "package/tidsp-binaries/Config.in"
 	source "package/tovid/Config.in"
-	source "package/rx/Config.in"
 	source "package/tstools/Config.in"
 	source "package/twolame/Config.in"
 	source "package/udpxy/Config.in"
@@ -599,14 +602,6 @@ menu "Mono libraries/modules"
 endmenu
 endif
 	source "package/nodejs/Config.in"
-if BR2_PACKAGE_NODEJS
-menu "Nodejs Applications"	
-	source "package/volumio2/Config.in"
-	if BR2_PACKAGE_VOLUMIO2
-		source "package/volumio2-UI/Config.in"
-	endif
-endmenu
-endif
 	source "package/perl/Config.in"
 if BR2_PACKAGE_PERL
 menu "Perl libraries/modules"

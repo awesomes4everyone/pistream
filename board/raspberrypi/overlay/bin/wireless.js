@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/node
 
 //Volumio Network Manager - Copyright Michelangelo Guarise - Volumio.org
 
@@ -8,9 +8,9 @@ var fs = require('fs-extra')
 var thus = require('child_process');
 var wlan = "wlan0";
 var dhcpd = "dhcpd";
-var dhclient = "/sbin/dhcpcd";
-var justdhclient = "/sbin/dhcpcd";
-var wpasupp = "wpa_supplicant -d -s -B -Dnl80211,wext -c/etc/wpa_supplicant/wpa_supplicant.conf -i" + wlan;
+var dhclient = "/sbin/udhcpc -iwlan0";
+var justdhclient = "/sbin/udhcpc -iwlan0";
+var wpasupp = "wpa_supplicant -d -s -B -Dnl80211,wext -c/etc/wpa_supplicant.conf -i" + wlan;
 var starthostapd = "/etc/init.d/S95hotspot start";
 var stophostapd = "/etc/init.d/S95hotspot stop";
 var ifconfigHotspot = "ifconfig " + wlan + " 192.168.211.1 up";

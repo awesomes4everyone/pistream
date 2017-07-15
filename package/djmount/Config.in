@@ -1,0 +1,7 @@
+config BR2_PACKAGE_DJMOUNT
+        bool "djmount"
+	select BR2_PACKAGE_LIBFUSE
+        help
+	  djmount is a UPnP AV client. It mounts as a Linux filesystem (using FUSE) the media content of compatible UPnP AV devices : the Audio and Video content on the network is automatically discovered, and can be browsed as a standard directory tree.
+
+	  http://djmount.sourceforge.net

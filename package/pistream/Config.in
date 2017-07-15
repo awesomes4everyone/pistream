@@ -1,0 +1,2 @@
+source "package/pistream/snapcast/Config.in"
+source "package/pistream/librespot/Config.in"

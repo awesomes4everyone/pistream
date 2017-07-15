@@ -1,0 +1,28 @@
+#! /bin/sh
+
+NAME=djmount
+
+case "$1" in
+	start)
+		printf "Starting $NAME: "
+		/usr/bin/djmount -o iocharset=utf8,allow_other /mnt/UPNP
+		[ $? = 0 ] && echo "OK" || echo "FAIL"
+		;;
+	stop)
+		printf "Stopping $NAME: "
+		start-stop-daemon -K -q -n $NAME
+		[ $? = 0 ] && echo "OK" || echo "FAIL"
+		;;
+	restart|reload)
+		echo "Restarting $NAME: "
+		$0 stop
+		sleep 1
+		$0 start
+		;;
+	*)
+		echo "Usage: $0 {start|stop|restart|reload}" >&2
+		exit 1
+		;;
+esac
+
+exit 0
