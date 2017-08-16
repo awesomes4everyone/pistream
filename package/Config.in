@@ -1,5 +1,6 @@
 menu "Pistream"
 	source "package/pistream/Config.in"
+endmenu
 
 menu "Target packages"
 

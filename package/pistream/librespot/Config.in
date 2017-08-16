@@ -1,0 +1,5 @@
+config BR2_PACKAGE_LIBRESPOT
+	bool "librespot"
+	
+	help
+	  Spotify Connect

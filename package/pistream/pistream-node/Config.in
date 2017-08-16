@@ -1,0 +1,5 @@
+config BR2_PACKAGE_PISTREAM_NODE
+	bool "pistream-node"
+	select BR2_PACKAGE_NODEJS
+	help
+	  Synchronous multi-room audio system
